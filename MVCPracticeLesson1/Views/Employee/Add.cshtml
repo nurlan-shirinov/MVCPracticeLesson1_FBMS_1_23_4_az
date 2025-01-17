@@ -1,0 +1,45 @@
+﻿@model MVCPracticeLesson1.Models.EmployeeAddViewModel
+
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add</title>
+</head>
+<body>
+    <form asp-controller="Employee" asp-action="Add" method="post">
+        <section>
+            <label asp-for="Employee.Id"></label>
+            <input asp-for="Employee.Id" />
+            <span asp-validation-for="Employee.Id" style="color:red;"></span>
+        </section>
+
+        <section>
+            <label asp-for="Employee.Firstname"></label>
+            <input asp-for="Employee.Firstname" />
+            <span asp-validation-for="Employee.Firstname" style="color:red;"></span>
+
+        </section>
+
+        <section>
+            <label asp-for="Employee.Lastname"></label>
+            <input asp-for="Employee.Lastname" />
+            <span asp-validation-for="Employee.Lastname" style="color:red;"></span>
+        </section>
+
+        <section>
+            <label asp-for="Employee.CityId"></label>
+            <select asp-for="Employee.CityId" asp-items="Model.Cities"></select>
+        </section>
+
+        <section>
+            <button type="submit">Submit</button>
+        </section>
+    </form>
+</body>
+</html>
