@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Routing;
 using MVCPracticeLesson1.Entities;
 using MVCPracticeLesson1.Models;
+using MVCPracticeLesson1.Services;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,9 +10,17 @@ namespace MVCPracticeLesson1.Controllers
 {
     public class HomeController : Controller
     {
+
+        private readonly ICalculate _calculate;
+
+        public HomeController(ICalculate calculate)
+        {
+            _calculate = calculate;
+        }
+
         public string Index()
         {
-            return "Hello From Index action";
+            return $"Hello From Index action{_calculate.Calculator(100)}";
         }
 
         public IActionResult Index2()

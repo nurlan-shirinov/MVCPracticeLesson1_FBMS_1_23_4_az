@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MVCPracticeLesson1.Entities;
 
 namespace MVCPracticeLesson1.Context
 {
@@ -8,5 +9,6 @@ namespace MVCPracticeLesson1.Context
         {
 
         }
+        public DbSet<Student> Students { get; set; }
     }
 }
