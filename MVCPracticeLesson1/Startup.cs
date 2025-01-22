@@ -37,7 +37,10 @@ namespace MVCPracticeLesson1
                 opt.UseSqlServer(conn);
             });
 
-            services.AddTransient<ICalculate, Calculate>();
+            //services.AddSingleton<ICalculate, Calculate>();
+            //services.AddScoped<ICalculate, Calculate>();
+            services.AddScoped<ICalculate, Calculate>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

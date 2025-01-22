@@ -11,16 +11,17 @@ namespace MVCPracticeLesson1.Controllers
     public class HomeController : Controller
     {
 
-        private readonly ICalculate _calculate;
+        private readonly ICalculate _calculate1;
 
-        public HomeController(ICalculate calculate)
+        public HomeController(ICalculate calculate1)
         {
-            _calculate = calculate;
+            _calculate1 = calculate1;
+
         }
 
         public string Index()
         {
-            return $"Hello From Index action{_calculate.Calculator(100)}";
+            return $"Hello From Index action{_calculate1.Calculator(100)}";
         }
 
         public IActionResult Index2()

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MVCPracticeLesson1.Context;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MVCPracticeLesson1.Controllers
@@ -19,8 +18,5 @@ namespace MVCPracticeLesson1.Controllers
         {
             return View(await _context.Students.ToListAsync());
         }
-
-
-
     }
 }
